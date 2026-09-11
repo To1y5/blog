@@ -3,6 +3,12 @@ title: Cloudreve部署
 slug: Cloudreve部署
 permalink: 2023/12/08/Cloudreve部署/
 date: 2023-12-08 23:18:00
+categories:
+  - 运维
+tags:
+  - Linux
+  - Cloudreve
+  - Go
 ---
 # Cloudreve部署
 
