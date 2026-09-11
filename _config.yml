@@ -43,6 +43,10 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
+# 文章配图写相对文件名时，解析到 /年/月/日/slug/xxx.png
+marked:
+  prependRoot: true
+  postAsset: true
 syntax_highlighter: highlight.js
 highlight:
   line_number: true
