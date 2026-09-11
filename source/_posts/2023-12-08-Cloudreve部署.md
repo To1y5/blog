@@ -5,25 +5,25 @@ permalink: 2023/12/08/Cloudreve部署/
 date: 2023-12-08 23:18:00
 ---
 # Cloudreve部署
+
 Linux专业课 期末大作业
 
 Cloudreve是一个由Go语言开发的网盘系统，可以快速部署在服务器上，支持不同的云存储平台。本次作业我们小组将基于Centos7使用Cloudreve搭建一个以ECS云盘为存储平台的小团体的网盘系统。
 
 ## 1.1 环境准备
+
 需要准备的内容有：
 
 - Go语言开发环境
-
 - 安装Node.js
-
 - 安装Yarn
-
 - 安装git
 
 Cloudreve程序中内置了一个Web服务器，构建完毕运行之后会在5212端口创建一个服务，所以我们不需要额外安装Apache或者Nginx
 
 ### 安装Go语言开发环境
-1.在Go官网下载Linux开发工具包
+
+1. 在Go官网下载Linux开发工具包
 
 ```shell
 wget https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
@@ -31,13 +31,13 @@ wget https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
 
 ![image-20231208165511910](image-20231208165511910-1702048792490-20.png)
 
-2.解压安装包
+2. 解压安装包
 
 ```shell
 sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz
 ```
 
-3.设置环境变量
+3. 设置环境变量
 
 编辑文件`/etc/profile`
 
@@ -53,7 +53,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 ![image-20231208165958797](image-20231208165958797-1702048792490-21.png)
 
-4.查看go版本
+4. 查看go版本
 
 ```shell
 go version
@@ -64,9 +64,10 @@ go version
 确保已经正确安装go环境。
 
 ### 安装Node.js
+
 Node.js是JavaScript的一个免费开源跨平台的一个运行环境，因为Cloudreve需要Node.js的支持，所以我们需要在centos7中安装Node.js。
 
-1.在官网找到软件包
+1. 在官网找到软件包
 
 ![image-20231208172633648](image-20231208172633648.png)
 
@@ -76,7 +77,7 @@ Node.js是JavaScript的一个免费开源跨平台的一个运行环境，因为
 wget https://nodejs.org/download/release/latest-v16.x/node-v16.20.2-linux-x64.tar.gz
 ```
 
-2.解压软件包
+2. 解压软件包
 
 ```shell
 tar -xvf node-v16.20.2-linux-x64.tar.gz
@@ -84,13 +85,13 @@ tar -xvf node-v16.20.2-linux-x64.tar.gz
 
 ![image-20231208172754511](image-20231208172754511-1702048792490-23.png)
 
-3.移动目录
+3. 移动目录
 
 ```shell
 mv node-v16.20.2-linux-x64/ /usr/local/
 ```
 
-4.配置环境变量&刷新
+4. 配置环境变量&刷新
 
 ```shell
 vi /etc/profile
@@ -108,7 +109,8 @@ export PATH=$PATH:$NODEJS/bin
 ![image-20231208173233575](image-20231208173233575.png)
 
 ### 安装Yarn
-1.添加Yarn仓库
+
+1. 添加Yarn仓库
 
 ```shell
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
@@ -116,7 +118,7 @@ curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yu
 
 ![image-20231208173432216](image-20231208173432216.png)
 
-2.安装Yarn
+2. 安装Yarn
 
 ```shell
 yum install -y yarn
@@ -124,7 +126,7 @@ yum install -y yarn
 
 ![image-20231208173516937](image-20231208173516937.png)
 
-3.安装完成检查版本
+3. 安装完成检查版本
 
 ```shell
 yarn --version
@@ -175,6 +177,7 @@ zip -r - assets/build >assets.zip
 ![image-20231208180733294](image-20231208180733294.png)
 
 ### 编译项目
+
 获得当前版本号
 
 ```shell
@@ -209,6 +212,7 @@ Cloudreve 默认会监听`5212`端口。在浏览器中访问`http://服务器IP
 ![image-20231208225643025](image-20231208225643025-1702048792490-25.png)
 
 ## 1.4 完成
+
 访问IP:5212端口，保存初次启动Cloudreve的默认密码登录web端后台
 
 ![image-20231208225711848](image-20231208225711848.png)
