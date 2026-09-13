@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="To1y5 sheared slash T">
+  <defs>
+    <filter id="g" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#1a2f44"/>
+  <g transform="translate(256,256) skewX(-10) translate(-256,-256)">
+    <path fill="#f3efe6" d="M124 96
+      h264 a12 12 0 0 1 12 12
+      v76 a12 12 0 0 1 -12 12
+      H278 v216 a12 12 0 0 1 -12 12
+      h-48 a12 12 0 0 1 -12 -12
+      V196 H124 a12 12 0 0 1 -12 -12
+      v-76 a12 12 0 0 1 12 -12 z"/>
+  </g>
+  <g filter="url(#g)">
+    <path d="M108 372 L404 232" fill="none" stroke="#2ec8f0" stroke-width="40" stroke-linecap="butt"/>
+  </g>
+</svg>
